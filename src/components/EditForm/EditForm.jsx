@@ -1,13 +1,14 @@
 import Modal from 'react-modal';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
-import { closeModal } from '../../redux/editSlice';
-import { selectContacts, selectItem, selectLoading, selectModal } from '../../redux/selectors';
-import { editContact } from '../../redux/contactsOps';
 import s from './EditForm.module.css'
 import { IoClose } from "react-icons/io5";
 import * as Yup from "yup";
 import toast from 'react-hot-toast';
+import { editContact } from '../../redux/contacts/operations';
+import { closeModal } from '../../redux/edit/slice';
+import { selectItem, selectModal } from '../../redux/edit/selectors';
+import { selectContacts, selectLoading } from '../../redux/contacts/selectors';
 
 
 const EditForm = () => {

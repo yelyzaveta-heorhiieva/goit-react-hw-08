@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchContacts, addContact, deleteContact, editContact } from "./contactsOps";
+import { addContact, deleteContact, editContact, fetchContacts } from "./operations";
+
 
 const handlePending = state => {
   state.loading = true;
