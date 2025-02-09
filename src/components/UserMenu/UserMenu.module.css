@@ -46,6 +46,7 @@
   text-align: center;
   overflow-wrap: break-word;
   margin-bottom: 16px;
+  color: rgb(114, 5, 5);
   @media screen and (min-width: 768px) {
     margin-bottom: 0;
   }
