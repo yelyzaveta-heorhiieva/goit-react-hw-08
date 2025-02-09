@@ -1,9 +1,9 @@
 import { FaUser, FaPhone } from "react-icons/fa6";
 import s from './Contact.module.css'
 import { useDispatch } from "react-redux";
-import { deleteContact } from '../../redux/contactsOps'
-import { openModal } from "../../redux/editSlice";
 import { MdDeleteForever, MdEdit } from "react-icons/md";
+import { deleteContact } from "../../redux/contacts/operations";
+import { openModal } from "../../redux/edit/slice";
 
 
 const Contact = ({ data: { name, number, id } }) => {
