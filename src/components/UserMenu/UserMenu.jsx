@@ -24,7 +24,7 @@ const UserMenu = () => {
   return (
     <>
       {!isTab && <button type='button' className={clsx(s.burgerBtn)} onMouseEnter={() => setTriger(true)}
-        onTouchStart={() => setTriger(true)} onTouchEnd={() => !isTab  && setTriger(false)}>
+        onTouchStart={() => setTriger(prev => !prev)}>
         <FaUserCog className={s.burger} />
       </button>}
       <div className={!isTab ? modalClass : s.menu} onMouseLeave={() => !isTab && setTriger(false)}>
