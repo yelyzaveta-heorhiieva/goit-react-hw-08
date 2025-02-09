@@ -1,5 +1,5 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import s from "./ContactFrom.module.css"
+import s from "./ContactForm.module.css"
 import * as Yup from "yup";
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from '../../redux/contacts/operations';
@@ -44,7 +44,7 @@ const ContactForm = () => {
 
 
   return (
-      <>
+      <div className={s.container}>
         <Formik onSubmit={handleSubmit} initialValues={initialValues} validationSchema={FeedbackSchema}>
           <Form className={s.form}>
           <label className={s.label}>Name
@@ -58,8 +58,7 @@ const ContactForm = () => {
           <button className={s.btn} type="submit" disabled={loading}>Add contact</button>
           </Form>
         </Formik>
-        
-      </>
+      </div>
   )
 }
 

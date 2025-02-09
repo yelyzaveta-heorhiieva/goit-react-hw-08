@@ -1,18 +1,38 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUser } from '../../redux/auth/selectors';
 import { logOut } from '../../redux/auth/operations';
+import { FaUserCog } from "react-icons/fa";
+import { useMediaQuery } from 'react-responsive';
+import s from "./UserMenu.module.css"
+import clsx from 'clsx';
+import { useEffect, useState } from 'react';
+
 
 const UserMenu = () => {
-const dispatch = useDispatch();
+  const [modalClass, setModalClass] = useState(s.modal)
+  const [triger, setTriger] = useState(false)
+  const dispatch = useDispatch();
   const user = useSelector(selectUser);
+  const isTab = useMediaQuery({ query: '(min-width: 768px)' })
+ 
+
+  useEffect(() => {
+ setModalClass(clsx(s.modal, triger && s.active))
+  }, [triger])
+
 
   return (
-    <div>
-      <p>Welcome, {user.name}</p>
-      <button type="button" onClick={() => dispatch(logOut())}>
-        Logout
-      </button>
-    </div>
+    <>
+      {!isTab && <button type='button' className={clsx(s.burgerBtn)} onMouseEnter={() => setTriger(true)} >
+        <FaUserCog className={s.burger} />
+      </button>}
+      <div className={!isTab ? modalClass : s.menu} onMouseLeave={() => !isTab  && setTriger(false)}>
+        <p className={s.greetings}>Welcome, {user.name}</p>
+        <button className={s.logOutBtn} type="button" onClick={() => dispatch(logOut())}>
+          Log out
+        </button>
+      </div>
+    </>
   );
 }
 

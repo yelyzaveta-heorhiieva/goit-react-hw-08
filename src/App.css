@@ -2,6 +2,7 @@
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
+  margin-top: 60px;
 }
 
 h1,
@@ -12,6 +13,7 @@ h5,
 h6,
 p {
   margin: 0;
+  line-height: 1;
 }
 
 ul {
@@ -25,6 +27,7 @@ a {
   text-decoration: none;
   font-style: normal;
   color: currentColor;
+  line-height: 1;
 }
 
 img {
@@ -41,4 +44,5 @@ button {
   font-family: inherit;
   color: currentColor;
   border: none;
+  line-height: 1;
 }

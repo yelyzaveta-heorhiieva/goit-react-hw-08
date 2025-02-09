@@ -1,0 +1,11 @@
+.navList {
+  display: flex;
+  gap: 16px;
+  padding: 20px 0;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.active {
+  color: white;
+}

@@ -19,14 +19,14 @@ const dispatch = useDispatch();
   }, [dispatch]);
 
   return (
-    <div className={s.content}>
+    <>
       <h1 className={s.title}>Phonebook</h1>
       <ContactForm />
       <SearchBox />
       { loading && !error && <Hourglass wrapperClass={s.spinner} colors={['#008000', '#66FF00']}/>}
       {!loading && <ContactList />}
       <EditForm/>
-    </div>
+    </>
   )
 }
 

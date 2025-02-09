@@ -1,0 +1,73 @@
+.burgerBtn {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.burger {
+  width: 30px;
+  height: 30px;
+  fill: gold;
+}
+
+.modal {
+  position: fixed;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  left: 100%;
+  top: 60px;
+  background-color: rgb(200, 196, 196);
+  transition: opacity 250ms linear, visibility 250ms linear,
+    transform 0.5s linear;
+  padding: 20px;
+  width: 160px;
+  border-bottom-left-radius: 12px;
+}
+
+.active {
+  transform: translateX(-100%);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.menu {
+  display: flex;
+  padding: 20px 0;
+  align-items: center;
+  gap: 20px;
+}
+
+.greetings {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  overflow-wrap: break-word;
+  margin-bottom: 16px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+  }
+}
+
+.logOutBtn {
+  margin: 0 auto;
+  padding: 10px;
+  background-color: blueviolet;
+  border-radius: 4px;
+  transition: transform 0.5s linear;
+  &:hover {
+    transform: scale(1.05);
+  }
+  @media screen and (min-width: 768px) {
+    padding: 0;
+    font-size: 20px;
+    font-weight: 600;
+    transition: color 0.5s linear;
+    &:hover {
+      color: white;
+      transform: none;
+    }
+  }
+}
