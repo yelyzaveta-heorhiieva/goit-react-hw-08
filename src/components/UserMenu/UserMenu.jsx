@@ -28,7 +28,7 @@ const UserMenu = () => {
         <FaUserCog className={s.burger} />
       </button>}
       <div className={!isTab ? modalClass : s.menu} onMouseLeave={() => !isTab && setTriger(false)}
-      onTouchEnd={() => !isTab  && setTriger(false)}>
+      onTouchCancel={() => !isTab  && setTriger(false)}>
         <p className={s.greetings}>Welcome, {user.name}</p>
         <button className={s.logOutBtn} type="button" onClick={() => dispatch(logOut())}>
           Log out
