@@ -10,3 +10,24 @@
   height: 100px;
   margin-top: 50px;
 }
+
+.modal {
+  width: 280px;
+  min-height: 214px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  background-color: #e0c9ff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0px;
+  background-color: rgba(46, 43, 43, 0.837);
+}

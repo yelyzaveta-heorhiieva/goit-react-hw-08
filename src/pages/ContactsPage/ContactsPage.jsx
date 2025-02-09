@@ -8,6 +8,7 @@ import s from './ContactsPage.module.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectError, selectLoading } from '../../redux/contacts/selectors'
 import { fetchContacts } from '../../redux/contacts/operations'
+import DocumentTitle from '../../components/DocumentTitle'
 
 const ContactsPage = () => {
 const dispatch = useDispatch();
@@ -20,6 +21,7 @@ const dispatch = useDispatch();
 
   return (
     <>
+      <DocumentTitle>Your tasks</DocumentTitle>
       <ContactForm />
       <SearchBox />
       { loading && !error && <Hourglass wrapperClass={s.spinner} colors={['#008000', '#66FF00']}/>}

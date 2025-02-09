@@ -23,11 +23,10 @@ const UserMenu = () => {
 
   return (
     <>
-      {!isTab && <button type='button' className={clsx(s.burgerBtn)} onMouseEnter={() => setTriger(true)}
-        onTouchStart={() => setTriger(prev => !prev)}>
+      {!isTab && <button type='button' className={clsx(s.burgerBtn)} onTouchStart={() => setTriger(prev => !prev)}>
         <FaUserCog className={s.burger} />
       </button>}
-      <div className={!isTab ? modalClass : s.menu} onMouseLeave={() => !isTab && setTriger(false)}>
+      <div className={!isTab ? modalClass : s.menu}>
         <p className={s.greetings}>Welcome, {user.name}</p>
         <button className={s.logOutBtn} type="button" onClick={() => dispatch(logOut())}>
           Log out

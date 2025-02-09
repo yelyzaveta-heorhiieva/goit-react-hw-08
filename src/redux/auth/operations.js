@@ -18,7 +18,7 @@ export const register = createAsyncThunk("auth/register", async (credentials, th
         setAuthHeader(response.data.token);
         return response.data;
   } catch (e) {
-        toast.error('Register failed')
+        toast.error('Register failed. You may already have an account with this email. Сheck the entered data, please.')
       return thunkAPI.rejectWithValue(e.message);
     } 
 });
@@ -29,7 +29,7 @@ export const logIn = createAsyncThunk("auth/login", async (credentials, thunkAPI
         setAuthHeader(response.data.token);
         return response.data;
     } catch (e) {
-        toast.error('Login failed')
+        toast.error('Login failed. Сheck the entered data, please.')
       return thunkAPI.rejectWithValue(e.message);
     } 
 });
