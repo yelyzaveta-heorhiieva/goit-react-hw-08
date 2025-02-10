@@ -32,7 +32,7 @@ const dispatch = useDispatch();
 
   return (
     <>
-      <DocumentTitle>Your tasks</DocumentTitle>
+      <DocumentTitle>Contacts</DocumentTitle>
       <ContactForm />
       <SearchBox />
       { loading && !error && <Hourglass wrapperClass={s.spinner} colors={['#008000', '#66FF00']}/>}
