@@ -9,16 +9,16 @@ const editSlice = createSlice({
     },
   
   reducers: {
-    openModal(state, action) {
+    openEditModal(state, action) {
       state.modal = true;
       state.item = action.payload;
     },
-    closeModal(state) {
+    closeEditModal(state) {
       state.modal = false;
     },
   },
 });
 
 
-export const { openModal, closeModal } = editSlice.actions;
+export const { openEditModal, closeEditModal } = editSlice.actions;
 export default editSlice.reducer;

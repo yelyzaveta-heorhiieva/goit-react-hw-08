@@ -1,11 +1,11 @@
 import { Suspense } from 'react';
-import AppNav from './AppNav/AppNav';
+import AppBar from './AppBar/AppBar';
 
 
 const Layout = ({ children }) => {
   return (
     <div>
-      <AppNav />
+      <AppBar />
       <Suspense fallback={null}>{children}</Suspense>
     </div>
   )

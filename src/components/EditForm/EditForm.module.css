@@ -1,28 +1,7 @@
-.edit {
-  width: 280px;
-  min-height: 214px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  right: auto;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-  background-color: #e0c9ff;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-}
-
 .form {
   display: flex;
   flex-direction: column;
   gap: 8px;
-}
-
-.overlay {
-  position: fixed;
-  inset: 0px;
-  background-color: rgba(46, 43, 43, 0.837);
 }
 
 .btn {
@@ -31,7 +10,7 @@
   margin-top: 12px;
   padding: 8px 12px;
   border-radius: 4px;
-  background-color: rgb(171, 53, 230);
+  background-color: rgb(139, 83, 222);
   font-weight: 600;
   transition: background-color 0.4s linear, transform 0.4s linear;
   &:hover {

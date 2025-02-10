@@ -18,7 +18,7 @@
   pointer-events: none;
   left: 100%;
   top: 60px;
-  background-color: rgb(104, 0, 202);
+  background-color: rgb(113, 84, 220);
   transition: opacity 250ms linear, visibility 250ms linear,
     transform 0.5s linear;
   padding: 20px;

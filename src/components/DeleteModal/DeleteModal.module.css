@@ -1,0 +1,39 @@
+.text {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.btnList {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.btn {
+  min-width: 80px;
+  margin: 0 auto;
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color 0.4s linear, transform 0.4s linear;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.green {
+  background-color: rgb(8, 158, 78);
+  &:hover {
+    background-color: rgb(21, 197, 6);
+  }
+}
+
+.red {
+  background-color: rgb(214, 8, 8);
+  &:hover {
+    background-color: rgb(228, 72, 72);
+  }
+}

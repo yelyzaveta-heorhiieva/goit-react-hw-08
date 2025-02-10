@@ -2,20 +2,12 @@ import { FaUser, FaPhone } from "react-icons/fa6";
 import s from './Contact.module.css'
 import { useDispatch } from "react-redux";
 import { MdDeleteForever, MdEdit } from "react-icons/md";
-import { deleteContact } from "../../redux/contacts/operations";
-import { openModal } from "../../redux/edit/slice";
+import { openEditModal } from "../../redux/edit/slice";
+import { openDeleteModal } from "../../redux/deleteModal/slice";
 
 
 const Contact = ({ data: { name, number, id } }) => {
   const dispatch = useDispatch();
-  
-   const handleDelete = () => {
-    dispatch(deleteContact(id))
-  }
-
-  const openEditForm = () => {
-    dispatch(openModal({ name, number, id }))
-  }
 
   return (
     <>
@@ -24,8 +16,16 @@ const Contact = ({ data: { name, number, id } }) => {
         <a className={s.text} href={`tel:+${number}`}><FaPhone /><span className={s.span}>{number}</span></a>
       </div>
       <ul className={s.btnList}>
-        <li><button className={s.btn} type="button" onClick={handleDelete}><MdDeleteForever className={s.icon} /></button></li>
-        <li><button className={s.btn} type="button" onClick={openEditForm}><MdEdit className={s.icon} /></button></li>
+        <li>
+          <button className={s.btn} type="button" onClick={() => dispatch(openDeleteModal(id))}>
+            <MdDeleteForever className={s.icon} />
+          </button>
+        </li>
+        <li>
+          <button className={s.btn} type="button" onClick={() => dispatch(openEditModal({ name, number, id }))}>
+            <MdEdit className={s.icon} />
+          </button>
+        </li>
       </ul>
     </>
   )
