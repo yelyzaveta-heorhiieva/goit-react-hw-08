@@ -16,11 +16,11 @@
   margin-top: 10px;
   padding: 12px;
   border-radius: 4px;
-  background-color: rgb(139, 83, 222);
+  background-color: rgb(113, 84, 220);
   font-weight: 600;
   transition: background-color 0.4s linear, transform 0.4s linear;
   &:hover {
-    background-color: rgb(153, 0, 255);
+    background-color: rgb(143, 88, 252);
     transform: scale(1.1);
   }
 }
