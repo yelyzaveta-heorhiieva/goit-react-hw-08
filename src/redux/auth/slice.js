@@ -39,8 +39,6 @@ initialState: {
       })
       .addCase(refreshUser.rejected, (state) => {
         state.isRefreshing = false;
-        state.isLoggedIn = false;
-
       });
   },
 })
