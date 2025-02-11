@@ -1,12 +1,12 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import toast from 'react-hot-toast';
+import { baseUrl } from "../auth/operations";
 
-axios.defaults.baseURL = "https://connections-api.goit.global/";
 
 export const fetchContacts = createAsyncThunk("contacts/fetchAll", async (_, thunkAPI) => {
     try {
-      const response = await axios.get("/contacts");
+      const response = await axios.get(`${baseUrl}/contacts`);
         return response.data;
     } catch (e) {
         toast.error('Request failed')
@@ -18,7 +18,7 @@ export const addContact = createAsyncThunk(
   "contacts/addContact",
   async ({name, number}, thunkAPI) => {
     try {
-      const response = await axios.post("/contacts", { name, number });
+      const response = await axios.post(`${baseUrl}/contacts`, { name, number });
       toast.success('New contact successfully added')
       return response.data;
     } catch (e) {
@@ -32,7 +32,7 @@ export const deleteContact = createAsyncThunk(
   "contacts/deleteContact",
   async (id, thunkAPI) => {
     try {
-      const response = await axios.delete(`/contacts/${id}`);
+      const response = await axios.delete(`${baseUrl}/contacts/${id}`);
       toast.success('Contact successfully deleted')
       return response.data;
     } catch (e) {
@@ -46,7 +46,7 @@ export const editContact = createAsyncThunk(
   "contacts/editContact",
   async ({name, number, id}, thunkAPI) => {
     try {
-        const response = await axios.patch(`/contacts/${id}`, {name, number});
+        const response = await axios.patch(`${baseUrl}/contacts/${id}`, {name, number});
       return response.data;
     } catch (e) {
         toast.error('Editing failed')

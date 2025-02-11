@@ -2,7 +2,7 @@ import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import toast from 'react-hot-toast';
 
-axios.defaults.baseURL = "https://connections-api.goit.global/";
+export const baseUrl = "https://connections-api.goit.global";
 
 const setAuthHeader = (token) => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -14,7 +14,7 @@ const clearAuthHeader = () => {
 
 export const register = createAsyncThunk("auth/register", async (credentials, thunkAPI) => {
   try {
-        const response = await axios.post("/users/signup", credentials);
+        const response = await axios.post(`${baseUrl}/users/signup`, credentials);
         setAuthHeader(response.data.token);
         return response.data;
   } catch (e) {
@@ -25,7 +25,7 @@ export const register = createAsyncThunk("auth/register", async (credentials, th
 
 export const logIn = createAsyncThunk("auth/login", async (credentials, thunkAPI) => {
     try {
-        const response = await axios.post("/users/login", credentials);
+        const response = await axios.post(`${baseUrl}/users/login`, credentials);
         setAuthHeader(response.data.token);
         return response.data;
     } catch (e) {
@@ -36,7 +36,7 @@ export const logIn = createAsyncThunk("auth/login", async (credentials, thunkAPI
 
 export const logOut = createAsyncThunk("auth/logout", async (_, thunkAPI) => {
     try {
-        await axios.post("/users/logout");
+        await axios.post(`${baseUrl}/users/logout`);
         clearAuthHeader();
     } catch (e) {
         toast.error('Logout failed')
@@ -54,7 +54,7 @@ export const refreshUser = createAsyncThunk("auth/refresh", async (_, thunkAPI) 
 
     try {
       setAuthHeader(persistedToken);
-      const response = await axios.get("/users/current");
+      const response = await axios.get(`${baseUrl}/users/current`);
       return response.data;
     } catch (e) {
         toast.error('Refresh failed')
