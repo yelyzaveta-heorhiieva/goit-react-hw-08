@@ -1,0 +1,17 @@
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 36px;
+  text-align: center;
+  font-weight: 600;
+  height: 50vh;
+}
+
+.icon {
+  width: 80px;
+  height: 80px;
+  fill: rgb(255, 72, 0);
+}
